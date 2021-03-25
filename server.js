@@ -7,13 +7,13 @@ var routes = require('./api/routes/routes');
 
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-var url = 'mongodb://localhost/RestAPI';
+var url = 'mongodb://localhost:27017/taskdb';
 mongoose
   .connect(url, { usedNewUrlParser: true })
-  .then((res) => {
+  .then((db) => {
     console.log('Successfully connected to the database.');
   })
-  .catch(() => {
+  .catch((err) => {
     console.log('Conntection to database failed.');
   });
 

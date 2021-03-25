@@ -26,7 +26,7 @@ exports.read_a_task = (req, res) => {
 };
 
 exports.update_a_task = (req, res) => {
-  Task.findOneAndUpdate(
+  Task.findByIdAndUpdate(
     { _id: req.params.taskId },
     req.body,
     { new: true },
